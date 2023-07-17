@@ -1,0 +1,22 @@
+{
+  "name": "fer_scrum_lab",
+  "version": "1.0.0",
+  "description": "Front-End ScrumLab",
+  "scripts": {
+    "start": "parcel development/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodersLab-core/FER_SCRUM_LAB.git"
+  },
+  "author": "CodersLab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodersLab-core/FER_SCRUM_LAB/issues"
+  },
+  "homepage": "https://github.com/CodersLab-core/FER_SCRUM_LAB#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0"
+  }
+}
