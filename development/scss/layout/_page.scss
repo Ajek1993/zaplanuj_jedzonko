@@ -1,3 +1,9 @@
 body {
-  background-color: #bada55;
+  background-color: $white-color;
+  font-family: $font-open-sans;
+}
+
+.main-container {
+  width: $main-width;
+  margin: 0 auto;
 }
