@@ -1,0 +1,29 @@
+.cta {
+  padding: 20px 150px;
+  height: 250px;
+  background-color: $header-bcg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    color: $white-color;
+    margin-right: 140px;
+
+    h3 {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+
+  &__button {
+    padding: 6px 10px;
+    width: 218px;
+    height: 55px;
+    font-size: 20px;
+  }
+}
