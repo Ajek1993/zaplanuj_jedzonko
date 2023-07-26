@@ -3,6 +3,10 @@ body {
   font-family: $font-open-sans;
 }
 
+.hide {
+  display: none;
+}
+
 .main-container {
   width: $main-width;
   margin: 0 auto;
