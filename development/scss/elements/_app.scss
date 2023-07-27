@@ -24,3 +24,50 @@
     }
   }
 }
+
+.main-section {
+  height: 690px;
+  display: flex;
+
+  .nav-bar {
+    height: 100%;
+    width: $navigation-width;
+    background-color: $navigation-bcg-color;
+
+    &__list {
+      .list__item {
+        padding: 0 20px;
+        height: 75px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:hover {
+          padding-left: 15px;
+          font-weight: 700;
+          border-left: 5px solid $buttons-color;
+
+          &::after {
+            content: "\f531";
+            font-family: "Font Awesome 5 Free";
+            font-size: 18px;
+            color: $buttons-color;
+          }
+        }
+
+        &-link {
+          font-size: 20px;
+          color: $white-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .main-content {
+    background-image: url("https://trello.com/1/cards/64b504ff5c87ffe729688c83/attachments/64b505005c87ffe729689508/previews/64b505005c87ffe729689507/download/image.png");
+    background-size: contain;
+    height: 100%;
+    width: $dashboard-width;
+  }
+}
