@@ -1,0 +1,34 @@
+.features {
+  background-color: $section-bcg-color;
+  padding: 20px 150px;
+  height: 650px;
+  font-family: $font-open-sans;
+  color: $navigation-bcg-color;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+  }
+  .content__column {
+    text-align: center;
+    margin-right: 100px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    p:nth-child(2) {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+    p:nth-child(3) {
+      font-size: 24px;
+    }
+  }
+  .fa-check, .fa-clock, .fa-list {
+    font-size: 100px;
+    color: $text-color;
+    margin-bottom: 15px;
+  }
+}
