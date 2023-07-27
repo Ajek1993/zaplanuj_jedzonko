@@ -64,10 +64,60 @@
       }
     }
   }
+
   .main-content {
     background-image: url("https://trello.com/1/cards/64b504ff5c87ffe729688c83/attachments/64b505005c87ffe729689508/previews/64b505005c87ffe729689507/download/image.png");
     background-size: contain;
     height: 100%;
     width: $dashboard-width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main-window {
+      width: $dashboard-container-width;
+      height: $dashboard-container-height;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $white-color;
+      border: 1px dashed $black-color;
+      color: $navigation-bcg-color;
+      padding: 50px 330px;
+      text-align: center;
+
+      h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+
+      .sub__title {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .info__name {
+        font-size: 20px;
+      }
+
+      .form__name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .input__name {
+          font-style: italic;
+          margin: 20px;
+          padding: 4px 10px;
+          width: 100%;
+        }
+
+        .form__btn {
+          margin-bottom: 30px;
+          padding: 6px 20px;
+          font-size: 20px;
+        }
+      }
+    }
   }
 }
