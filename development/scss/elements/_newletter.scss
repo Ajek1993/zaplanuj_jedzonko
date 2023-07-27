@@ -1,0 +1,26 @@
+.newsletter {
+  background-color: $header-bcg-color;
+  padding: 40px 150px;
+  color: $section-bcg-color;
+
+  &__column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      font-size: 48px;
+    }
+    input {
+      height: 51px;
+      width: 235px;
+      border: none;
+    }
+    button {
+      font-size: 20px;
+      padding: 14px 40px;
+      border: none;
+      float: right;
+    }
+  }
+}
