@@ -11,3 +11,15 @@ body {
   width: $main-width;
   margin: 0 auto;
 }
+
+h1 {
+  font-family: "Charmonman";
+  #first {
+    font-weight: 100;
+    color: white;
+  }
+  #second {
+    color: #e58a20;
+    font-weight: 700;
+  }
+}

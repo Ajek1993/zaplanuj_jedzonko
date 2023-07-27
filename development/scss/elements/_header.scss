@@ -1,24 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Charmonman");
+.main-header {
+  padding: 0 100px;
+  height: 100px;
+
+  h1 {
+    font-size: 40px;
+  }
+}
+
 header {
   background-color: $header-bcg-color;
-  height: 100px;
-  padding: 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  h1 {
-    font-family: "Charmonman";
-    font-size: 40px;
-    #first {
-      font-weight: 100;
-      color: white;
-    }
-    #second {
-      color: #e58a20;
-      font-weight: 700;
-    }
-  }
 
   .header__nav {
     display: flex;
