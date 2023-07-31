@@ -1,0 +1,25 @@
+.aboutMe {
+  background-color: $section-bcg-color;
+  padding: 60px 150px;
+  display: flex;
+  justify-content: space-between;
+
+  &__element-one {
+    background-color: $header-bcg-color;
+    width: 350px;
+    height: 350px;
+    padding: 65px;
+
+  }
+  &__element-two {
+    width: 700px;
+    p:first-of-type{
+      font-size: 36px;
+      padding-bottom: 30px;
+    }
+    p:last-of-type{
+      font-size: 24px;
+      text-align: justify;
+    }
+  }
+}
