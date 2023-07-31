@@ -119,5 +119,31 @@
         }
       }
     }
+    .not_first_entry_box {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .top__box {
+        width: $dashboard-container-width;
+        height: 177px;
+        border: 1px $black-color dashed;
+        display: flex;
+        justify-content: space-between;
+
+        &-buttons {
+        }
+
+        &-info-row {
+        }
+      }
+
+      .bottom__box {
+        width: $dashboard-container-width;
+        background-color: $white-color;
+        height: 441px;
+        border: 1px $black-color dashed;
+      }
+    }
   }
 }

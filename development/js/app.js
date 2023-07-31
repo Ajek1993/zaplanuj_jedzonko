@@ -12,7 +12,7 @@ const hideWindow = () => {
 };
 
 const showWindow = () => {
-  secondWindow.classList.add("main-window");
+  // secondWindow.classList.add("main-window");
   secondWindow.classList.remove("hide");
 };
 
