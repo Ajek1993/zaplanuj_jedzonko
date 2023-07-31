@@ -44,24 +44,29 @@
         justify-content: space-between;
 
         &:hover {
-          padding-left: 15px;
           font-weight: 700;
-          border-left: 5px solid $buttons-color;
-
-          &::after {
-            content: "\f531";
-            font-family: "Font Awesome 5 Free";
-            font-size: 18px;
-            color: $buttons-color;
-          }
         }
 
         &-link {
           font-size: 20px;
           color: $white-color;
           text-decoration: none;
+          width: 100%;
         }
       }
+    }
+  }
+
+  .chosen_item {
+    padding-left: 15px;
+    font-weight: 700;
+    border-left: 5px solid $buttons-color;
+
+    &::after {
+      content: "\f531";
+      font-family: "Font Awesome 5 Free";
+      font-size: 18px;
+      color: $buttons-color;
     }
   }
 

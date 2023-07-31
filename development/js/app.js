@@ -2,9 +2,10 @@ const userNameOnPage = document.querySelector(".user-name");
 const form = document.querySelector(".form__name");
 const mainWindow = document.querySelector(".first_entry_box");
 const secondWindow = document.querySelector(".not_first_entry_box");
+const navItems = document.querySelector(".nav-bar__list");
 
-console.log(mainWindow);
-console.log(secondWindow);
+console.log(navItems.children[0].children[0]["href"]);
+console.log(document.location.href);
 
 const hideWindow = () => {
   mainWindow.classList.remove("main-window");
@@ -12,7 +13,6 @@ const hideWindow = () => {
 };
 
 const showWindow = () => {
-  // secondWindow.classList.add("main-window");
   secondWindow.classList.remove("hide");
 };
 
@@ -30,3 +30,7 @@ form.addEventListener("submit", (e) => {
   hideWindow();
   showWindow();
 });
+
+if (document.location.href === navItems.children[0].children[0]["href"]) {
+  navItems.children[0].classList.add("chosen_item");
+}
