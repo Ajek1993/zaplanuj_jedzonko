@@ -143,6 +143,70 @@
         background-color: $white-color;
         height: 441px;
         border: 1px $black-color dashed;
+        padding: 8px;
+
+        .table__title {
+          color: $buttons-color;
+          text-align: center;
+          margin: 10px 0;
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        .table__week {
+          margin: 0 auto;
+          width: 90%;
+          text-align: center;
+
+          th,
+          td {
+            padding: 14px;
+            border-bottom: 1px solid $text-color;
+          }
+
+          th {
+            border-top: 1px solid $text-color;
+            color: $navigation-bcg-color;
+            font-size: 24px;
+          }
+          td {
+            font-size: 20px;
+            color: $text-color;
+          }
+        }
+
+        .change__buttons {
+          margin: 20px 10px 5px;
+          display: flex;
+          justify-content: space-between;
+
+          .change__btn {
+            background-color: $white-color;
+            color: $buttons-color;
+            border: none;
+            font-size: $font-base-size;
+          }
+
+          .previous__btn {
+            &::before {
+              content: "\f100";
+              font-weight: 900;
+              font-family: "Font Awesome 5 Free";
+              color: $buttons-color;
+              margin-right: 20px;
+            }
+          }
+
+          .next__btn {
+            &::after {
+              content: "\f101";
+              font-weight: 900;
+              font-family: "Font Awesome 5 Free";
+              color: $buttons-color;
+              margin-left: 20px;
+            }
+          }
+        }
       }
     }
   }
