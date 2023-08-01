@@ -132,26 +132,24 @@
       .top__box {
         width: $dashboard-container-width;
         height: 177px;
-        border: 1px $black-color dashed;
         display: flex;
         justify-content: space-between;
 
-        &-buttons {
+        & > a {
+          font-size: 20px;
+          font-family: $font-open-sans;
+          font-weight: 700;
+          text-align: center;
+          padding: 35px 0;
+          background-color: $white-color;
+          color: $message-success-color;
+          width: 100px;
+          height: 177px;
+          border: 2px dotted $message-success-color;
 
-          & > button {
-            font-size: 20px;
-            font-family: $font-open-sans;
-            font-weight: 700;
-            background-color: $white-color;
-            color: $message-success-color;
-            width: 100px;
-            height: 177px;
-            border: 2px dotted $message-success-color;
-
-            i {
-              font-size: 60px;
-              margin-bottom: 20px;
-            }
+          i {
+            font-size: 60px;
+            margin-bottom: 20px;
           }
         }
 
@@ -192,6 +190,10 @@
 
             .fa-info-circle, .fa-exclamation-circle, .fa-check-circle {
               font-size: 35px;
+            }
+
+            .row-message {
+              padding-left: 15px;
             }
           }
         }
