@@ -1,14 +1,108 @@
-// .list__item {
-//   &:nth-child(2) {
-//     padding-left: 15px;
-//     font-weight: 700;
-//     border-left: 5px solid $buttons-color;
+@import "../settings/variables";
 
-//     &::after {
-//       content: "\f531";
-//       font-family: "Font Awesome 5 Free";
-//       font-size: 18px;
-//       color: $buttons-color;
-//     }
-//   }
-// }
+.recipes {
+  padding: 30px !important;
+
+  &__title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid $text-color;
+    margin-bottom: 15px;
+    font-weight: 700;
+
+    &:first-child {
+      font-size: 24px;
+      line-height: 40px;
+      color: $buttons-color;
+    }
+    .fa-plus-square {
+      font-size: 40px;
+      color: $message-success-color;
+      cursor: pointer;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    color: $text-color;
+    padding: 10px;
+    text-align: left;
+    display: inline-block;
+
+    thead {
+      width: 100%;
+      th {
+        font-size: 20px;
+        border-top: 1px solid $text-color;
+        color: $navigation-bcg-color;
+        //wartości procentowe poniżej odpowiadają za szerokość kolumn
+        &:first-of-type {
+          width: 5%;
+        }
+        &:nth-of-type(2) {
+          width: 25%;
+        }
+        &:nth-of-type(3) {
+          width: 60%;
+        }
+        &:nth-of-type(4) {
+          width: 10%;
+          text-align: center;
+        }
+      }
+    }
+
+    tbody {
+      width: 100%;
+      td {
+        //wartości procentowe poniżej odpowiadają za szerokość kolumn
+        &:first-of-type {
+          width: 5%;
+        }
+        &:nth-of-type(2) {
+          width: 25%;
+        }
+        &:nth-of-type(3) {
+          width: 60%;
+        }
+        &:nth-of-type(4) {
+          width: 10%;
+          text-align: center;
+        }
+      }
+    }
+
+    tr,
+    th,
+    td {
+      font-size: 16px;
+      padding: 8px;
+      border-bottom: 1px solid $text-color;
+    }
+
+    td:nth-of-type(4) {
+      text-align: center;
+    }
+    .fa-edit {
+      color: $message-warning-color;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    .fa-trash-alt {
+      color: $trash-icon-color;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .table-scroll {
+      display: inline-block;
+      height: 450px;
+      width: 100%;
+      overflow-y: scroll;
+
+      tr:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+}
