@@ -154,7 +154,6 @@
         }
 
         &-info-rows {
-
           .info__row {
             font-size: 20px;
             font-weight: bold;
@@ -170,7 +169,6 @@
               color: $message-info-color;
               border: 2px dotted $message-info-color;
               margin-bottom: 12px;
-
             }
             &:nth-child(2) {
               color: $message-warning-color;
@@ -188,7 +186,9 @@
               right: 5px;
             }
 
-            .fa-info-circle, .fa-exclamation-circle, .fa-check-circle {
+            .fa-info-circle,
+            .fa-exclamation-circle,
+            .fa-check-circle {
               font-size: 35px;
             }
 

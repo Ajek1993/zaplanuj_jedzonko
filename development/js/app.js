@@ -1,7 +1,7 @@
 const userNameOnPage = document.querySelector(".user-name");
 const form = document.querySelector(".form__name");
 const mainWindow = document.querySelector(".first_entry_box");
-const secondWindow = document.querySelector(".not_first_entry_box");
+const secondWindow = document.querySelector(".second_box");
 const navItems = document.querySelector(".nav-bar__list");
 
 console.log(navItems.children[0].children[0]["href"]);
@@ -13,6 +13,7 @@ const hideWindow = () => {
 };
 
 const showWindow = () => {
+  secondWindow.classList.add("not_first_entry_box");
   secondWindow.classList.remove("hide");
 };
 
