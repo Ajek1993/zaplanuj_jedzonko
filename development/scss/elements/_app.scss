@@ -270,5 +270,116 @@
         }
       }
     }
+
+    .add_new_schedule {
+      position: relative;
+      padding: 40px;
+      padding-top: 20px;
+      display: inline;
+
+      .schedule_header {
+        display: flex;
+        justify-content: space-between;
+
+        h4 {
+          font-size: 24px;
+          color: $buttons-color;
+        }
+
+        .save_btn {
+          padding: 6px 10px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 60px;
+          width: 987px;
+          height: 2px;
+          background-color: $text-color;
+        }
+      }
+
+      .inputs__box {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 60px 0 0;
+
+        .input__box {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          height: 30px;
+          margin: 10px 0;
+          gap: 20px;
+
+          p {
+            font-size: 24px;
+            color: $navigation-bcg-color;
+          }
+
+          input {
+            padding: 3px;
+            font-size: $font-base-size;
+            width: 720px;
+          }
+
+          &:nth-child(2) {
+            font-size: $font-base-size;
+            height: 76px;
+          }
+
+          &:last-child {
+            justify-content: flex-start;
+            gap: 25px;
+
+            input {
+              width: 45px;
+            }
+          }
+        }
+
+        &::after {
+          content: "";
+          margin-top: 10px;
+          margin-left: 180px;
+          width: 750px;
+          height: 1px;
+          background-color: $text-color;
+        }
+      }
+
+      .table__schedules {
+        width: 95%;
+
+        .day-row td:first-child {
+          color: $navigation-bcg-color;
+          font-weight: 700;
+        }
+
+        th,
+        td {
+          padding: 7px;
+          border-bottom: 1px solid $text-color;
+        }
+
+        th {
+          padding: 15px;
+          color: $navigation-bcg-color;
+          font-size: 20px;
+          vertical-align: middle;
+        }
+        td {
+          font-size: 16px;
+          color: $text-color;
+        }
+
+        select {
+          border-radius: 5px;
+          width: 150px;
+          font-size: 16px;
+        }
+      }
+    }
   }
 }
