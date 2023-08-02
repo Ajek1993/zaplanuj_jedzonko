@@ -1,14 +1,15 @@
 @import "../settings/variables";
 
 .recipes {
-  padding: 30px!important;
+  padding: 30px !important;
 
   &__title {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid $header-bcg-color;
+    border-bottom: 2px solid $text-color;
     margin-bottom: 15px;
+    font-weight: 700;
 
     &:first-child {
       font-size: 24px;
@@ -33,15 +34,17 @@
       width: 100%;
       th {
         font-size: 20px;
+        border-top: 1px solid $text-color;
+        color: $navigation-bcg-color;
         //wartości procentowe poniżej odpowiadają za szerokość kolumn
         &:first-of-type {
           width: 5%;
         }
         &:nth-of-type(2) {
-          width: 30%;
+          width: 25%;
         }
         &:nth-of-type(3) {
-          width: 55%;
+          width: 60%;
         }
         &:nth-of-type(4) {
           width: 10%;
@@ -49,11 +52,33 @@
         }
       }
     }
-    tr, th, td {
+
+    tbody {
+      width: 100%;
+      td {
+        //wartości procentowe poniżej odpowiadają za szerokość kolumn
+        &:first-of-type {
+          width: 5%;
+        }
+        &:nth-of-type(2) {
+          width: 25%;
+        }
+        &:nth-of-type(3) {
+          width: 60%;
+        }
+        &:nth-of-type(4) {
+          width: 10%;
+          text-align: center;
+        }
+      }
+    }
+
+    tr,
+    th,
+    td {
       font-size: 16px;
       padding: 8px;
-      border-top: 1px solid $navigation-bcg-color;
-      border-bottom: 1px solid $navigation-bcg-color;
+      border-bottom: 1px solid $text-color;
     }
 
     td:nth-of-type(4) {
@@ -64,14 +89,14 @@
       margin-right: 5px;
       cursor: pointer;
     }
-    .fa-trash-alt{
+    .fa-trash-alt {
       color: $trash-icon-color;
       margin-left: 5px;
       cursor: pointer;
     }
     .table-scroll {
-      //display: inline-block;
-      height: auto;
+      display: inline-block;
+      height: 450px;
       width: 100%;
       overflow-y: scroll;
 
