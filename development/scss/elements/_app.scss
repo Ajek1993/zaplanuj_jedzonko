@@ -274,6 +274,7 @@
     .add_new_schedule {
       position: relative;
       padding: 40px;
+      padding-top: 20px;
       display: inline;
 
       .schedule_header {
@@ -292,7 +293,7 @@
         &::after {
           content: "";
           position: absolute;
-          top: 80px;
+          top: 60px;
           width: 987px;
           height: 2px;
           background-color: $text-color;
@@ -302,8 +303,7 @@
       .inputs__box {
         display: flex;
         flex-direction: column;
-        padding: 20px 0;
-        padding-right: 60px;
+        padding: 15px 60px 0 0;
 
         .input__box {
           display: flex;
@@ -346,6 +346,38 @@
           width: 750px;
           height: 1px;
           background-color: $text-color;
+        }
+      }
+
+      .table__schedules {
+        width: 95%;
+
+        .day-row td:first-child {
+          color: $navigation-bcg-color;
+          font-weight: 700;
+        }
+
+        th,
+        td {
+          padding: 7px;
+          border-bottom: 1px solid $text-color;
+        }
+
+        th {
+          padding: 15px;
+          color: $navigation-bcg-color;
+          font-size: 20px;
+          text-align: center;
+        }
+        td {
+          font-size: 16px;
+          color: $text-color;
+        }
+
+        select {
+          border-radius: 5px;
+          width: 150px;
+          font-size: 16px;
         }
       }
     }
