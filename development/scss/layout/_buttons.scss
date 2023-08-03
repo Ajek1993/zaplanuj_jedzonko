@@ -6,3 +6,20 @@
   font-family: $font-open-sans;
   font-weight: 700;
 }
+
+.fa-plus-square {
+  color: #468966;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.fa-edit {
+  color: $message-warning-color;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.fa-trash-alt {
+  color: $trash-icon-color;
+  margin-left: 5px;
+  cursor: pointer;
+}
