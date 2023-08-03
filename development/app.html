@@ -158,13 +158,116 @@
             </div>
           </div>
         </div>
-        <div class="main-window add_new_recipe hide">tutaj zadanie 4.1</div>
-        <div class="main-window add_new_schedule hide">
-          <div class="schedule_header">
-            <h4>NOWY PLAN</h4>
+        <div class="main-window add_new_recipe add_schedule_recipe hide">
+          <div class="schedule_recipe_header">
+            <h4>NOWY PRZEPIS</h4>
             <button class="save_btn btn">Zapisz i zamknij</button>
           </div>
           <div class="inputs__box">
+            <div class="input__box">
+              <p>Nazwa przepisu</p>
+              <input type="text" placeholder="Wpisz nazwę planu" />
+            </div>
+            <div class="input__box">
+              <p>Opis przepisu</p>
+              <textarea
+                rows="5"
+                cols="87"
+                maxlength="200"
+                name="text"
+                placeholder="Opisz swój przepis"
+              ></textarea>
+            </div>
+          </div>
+          <div class="two__columns">
+            <div class="two__columns-column">
+              <div class="instructions inside__header">INSTRUKCJE</div>
+              <textarea
+                rows="3"
+                cols="50"
+                maxlength="100"
+                name="text"
+              ></textarea>
+              <i class="fas fa-plus-square"></i>
+              <ol type="1" class="instructions__list">
+                <li class="instructions__list-item">
+                  Brukselkę obierz z zewnętrznych liści, nadetnij na krzyż od
+                  strony głąba.<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="instructions__list-item">
+                  Gotuj około 5 minut w osolonym wrzątku. Odcedź i przelej zimną
+                  wodą. Brukselkę przetnij na pół, wytnij głąb, a następnie
+                  rozdziel od siebie wszystkie liście kapusty.<i
+                    class="fas fa-edit"
+                  ></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="instructions__list-item">
+                  Obraną cebulę pokrój w kostkę, zeszklij na patelni na
+                  rozgrzanej Ramie.<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="instructions__list-item">
+                  Smaż około 2-3 minut cały czas mieszając.<i
+                    class="fas fa-edit"
+                  ></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+              </ol>
+            </div>
+            <div class="two__columns-column">
+              <div class="ingredients inside__header">SKŁADNIKI</div>
+              <textarea
+                rows="1"
+                cols="50"
+                maxlength="50"
+                name="text"
+              ></textarea>
+              <i class="fas fa-plus-square"></i>
+              <ul type="1" class="recipes__list">
+                <li class="recipes__list-item">
+                  Brukselka 300g<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="recipes__list-item">
+                  Śmietana 200g<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="recipes__list-item">
+                  Cebula 100g<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="recipes__list-item">
+                  Masło 40g<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="recipes__list-item">
+                  Masło 40g<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="recipes__list-item">
+                  Masło 40g<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="recipes__list-item">
+                  Masło 40g<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+                <li class="recipes__list-item">
+                  Masło 40g<i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="main-window add_new_schedule add_schedule_recipe hide">
+          <div class="schedule_recipe_header">
+            <h4>NOWY PLAN</h4>
+            <button class="save_btn btn">Zapisz i zamknij</button>
+          </div>
+          <div class="inputs__box schedule__box">
             <div class="input__box">
               <p>Nazwa planu</p>
               <input type="text" placeholder="Wpisz nazwę planu" />

@@ -271,13 +271,13 @@
       }
     }
 
-    .add_new_schedule {
+    .add_schedule_recipe {
       position: relative;
       padding: 40px;
       padding-top: 20px;
       display: inline;
 
-      .schedule_header {
+      .schedule_recipe_header {
         display: flex;
         justify-content: space-between;
 
@@ -318,6 +318,10 @@
             color: $navigation-bcg-color;
           }
 
+          textarea {
+            resize: none;
+          }
+
           input {
             padding: 3px;
             font-size: $font-base-size;
@@ -329,7 +333,7 @@
             height: 76px;
           }
 
-          &:last-child {
+          &:nth-child(3) {
             justify-content: flex-start;
             gap: 25px;
 
@@ -338,7 +342,9 @@
             }
           }
         }
+      }
 
+      .schedule__box {
         &::after {
           content: "";
           margin-top: 10px;
@@ -382,4 +388,77 @@
       }
     }
   }
+}
+
+.two__columns {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &-column {
+    width: 45%;
+    height: 350px;
+
+    textarea {
+      font-family: $font-open-sans;
+      font-size: 16px;
+      padding: 6px;
+      resize: none;
+      width: 90%;
+    }
+
+    .inside__header {
+      display: flex;
+      flex-direction: column;
+      font-size: 24px;
+      color: $navigation-bcg-color;
+      text-align: left;
+
+      &::after {
+        content: "";
+        margin-top: 5px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 2px;
+        background-color: $text-color;
+      }
+    }
+
+    .instructions__list {
+      font-size: 16px;
+      margin-top: 30px;
+      height: 55%;
+      overflow-y: auto;
+      text-align: left;
+
+      &-item {
+        margin-bottom: 4px;
+        line-height: 22px;
+        width: 95%;
+        list-style: decimal;
+        list-style-position: inside;
+      }
+    }
+
+    .recipes__list {
+      font-size: 16px;
+      margin-top: 75px;
+      height: 55%;
+      overflow-y: auto;
+      text-align: left;
+
+      &-item {
+        margin-bottom: 4px;
+        line-height: 22px;
+        width: 95%;
+        list-style: circle;
+        list-style-position: inside;
+      }
+    }
+  }
+}
+
+.fas {
+  margin-left: 6px;
 }
