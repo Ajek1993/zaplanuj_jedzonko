@@ -54,7 +54,6 @@ const ingredientsInput = document.querySelector(".ingredients__input");
 const addNewInstruction = () => {
   const newLi = instructionToCopy.cloneNode(true);
   newLi.children[0].innerText = instructionsInput.value;
-  console.log(newLi);
   newLi.classList.remove("hide");
   instructionsList.append(newLi);
   instructionsInput.value = "";
@@ -63,7 +62,6 @@ const addNewInstruction = () => {
 const addNewIngredient = () => {
   const newLi = ingredientToCopy.cloneNode(true);
   newLi.children[0].innerText = ingredientsInput.value;
-  console.log(newLi);
   newLi.classList.remove("hide");
   ingredientsList.append(newLi);
   ingredientsInput.value = "";
@@ -77,6 +75,7 @@ ingredientsBtn.addEventListener("click", addNewIngredient);
 const recipeSaveButton = document.querySelector(
   ".schedule_recipe_header .save_btn"
 );
+
 let allRecipies = [];
 
 class Recipe {
@@ -148,6 +147,8 @@ const scheduleSaveButton = document.querySelector(
 );
 
 const recipesFromLocaleStage = JSON.parse(localStorage.getItem("recipes"));
+const recipesNumbers = document.querySelector(".recipes_numbers");
+recipesNumbers.innerText = recipesFromLocaleStage.length;
 
 tableSelects.forEach((select) => {
   recipesFromLocaleStage.forEach((el) => {
@@ -255,48 +256,75 @@ const days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
 const weekNumber = Math.ceil(days / 7);
 
 const week = document.querySelector(".week_number");
-
 const week_meals = document.querySelector(".week_meals");
 
-if (localStorage.getItem("schedules") != null) {
-  const allSchedules = JSON.parse(localStorage.getItem("schedules")).sort(
-    (a, b) => a.id - b.id
-  );
+let chosenSchedule;
+let ids;
+const renderSchedulesOnPage = (num = weekNumber) => {
+  if (localStorage.getItem("schedules") != null) {
+    const allSchedules = JSON.parse(localStorage.getItem("schedules")).sort(
+      (a, b) => a.id - b.id
+    );
 
-  const ids = allSchedules.map((el) => el.id);
-  const goal = weekNumber;
-  const closestID = ids.reduce(function (prev, curr) {
-    return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
-  });
+    ids = allSchedules.map((el) => el.id);
+    const goal = num;
+    const closestID = ids.reduce(function (prev, curr) {
+      return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
+    });
 
-  const actualSchedule = allSchedules.filter((el) => el.id === closestID)[0];
-  week.innerText = closestID;
+    chosenSchedule = ids.indexOf(closestID);
 
-  for (let i = 0; i < week_meals.children.length; i++) {
-    week_meals.children[i].children[0].innerText = actualSchedule.monday[i];
+    const actualSchedule = allSchedules.filter((el) => el.id === closestID)[0];
+    week.innerText = closestID;
+
+    for (let i = 0; i < week_meals.children.length; i++) {
+      week_meals.children[i].children[0].innerText = actualSchedule.monday[i];
+    }
+
+    for (let i = 0; i < week_meals.children.length; i++) {
+      week_meals.children[i].children[1].innerText = actualSchedule.tuesday[i];
+    }
+
+    for (let i = 0; i < week_meals.children.length; i++) {
+      week_meals.children[i].children[2].innerText =
+        actualSchedule.wednesday[i];
+    }
+
+    for (let i = 0; i < week_meals.children.length; i++) {
+      week_meals.children[i].children[3].innerText = actualSchedule.thursday[i];
+    }
+
+    for (let i = 0; i < week_meals.children.length; i++) {
+      week_meals.children[i].children[4].innerText = actualSchedule.friday[i];
+    }
+
+    for (let i = 0; i < week_meals.children.length; i++) {
+      week_meals.children[i].children[5].innerText = actualSchedule.saturday[i];
+    }
+
+    for (let i = 0; i < week_meals.children.length; i++) {
+      week_meals.children[i].children[6].innerText = actualSchedule.sunday[i];
+    }
   }
+};
 
-  for (let i = 0; i < week_meals.children.length; i++) {
-    week_meals.children[i].children[1].innerText = actualSchedule.tuesday[i];
-  }
+renderSchedulesOnPage();
 
-  for (let i = 0; i < week_meals.children.length; i++) {
-    week_meals.children[i].children[2].innerText = actualSchedule.wednesday[i];
-  }
+const previous__btn = document.querySelector(".previous__btn");
 
-  for (let i = 0; i < week_meals.children.length; i++) {
-    week_meals.children[i].children[3].innerText = actualSchedule.thursday[i];
+previous__btn.addEventListener("click", () => {
+  chosenSchedule--;
+  if (chosenSchedule < 0) {
+    chosenSchedule = 0;
   }
+  const prevId = ids[chosenSchedule];
+  renderSchedulesOnPage(prevId);
+});
 
-  for (let i = 0; i < week_meals.children.length; i++) {
-    week_meals.children[i].children[4].innerText = actualSchedule.friday[i];
-  }
+const next__btn = document.querySelector(".next__btn");
 
-  for (let i = 0; i < week_meals.children.length; i++) {
-    week_meals.children[i].children[5].innerText = actualSchedule.saturday[i];
-  }
-
-  for (let i = 0; i < week_meals.children.length; i++) {
-    week_meals.children[i].children[6].innerText = actualSchedule.sunday[i];
-  }
-}
+next__btn.addEventListener("click", () => {
+  chosenSchedule++;
+  const nextId = ids[chosenSchedule];
+  renderSchedulesOnPage(nextId);
+});
