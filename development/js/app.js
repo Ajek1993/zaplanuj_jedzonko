@@ -142,15 +142,23 @@ recipeSaveButton.addEventListener("click", function () {
 
 const ScheduleBox = document.querySelector(".add_new_schedule");
 const addScheduleBtn = document.querySelector(".new_schedule_btn");
-const tableSelects = document.querySelectorAll(".table__schedules select");
-console.log(Array.from(tableSelects));
+const tableSelects = Array.from(
+  document.querySelectorAll(".table__schedules select")
+);
 
 const scheduleSaveButton = document.querySelector(
   ".add_new_schedule .save_btn"
 );
 
-const dupa = localStorage.getItem("recipes");
-console.log(dupa);
+const recipesFromLocaleStage = JSON.parse(localStorage.getItem("recipes"));
+
+tableSelects.forEach((select) => {
+  recipesFromLocaleStage.forEach((el) => {
+    const newOption = document.createElement("option");
+    newOption.innerText = el.title;
+    select.appendChild(newOption);
+  });
+});
 
 let allPlanns = [];
 
