@@ -54,12 +54,10 @@ const ingredientsList = document.querySelector(".ingredients__list");
 const ingredientToCopy = document.querySelector(".ingredients__list-item");
 const ingredientsInput = document.querySelector(".ingredients__input");
 
-console.log(instructionsList);
-console.log(ingredientsList);
-
 const addNewInstruction = () => {
   const newLi = instructionToCopy.cloneNode(true);
   newLi.children[0].innerText = instructionsInput.value;
+  console.log(newLi);
   newLi.classList.remove("hide");
   instructionsList.append(newLi);
   instructionsInput.value = "";
@@ -68,6 +66,7 @@ const addNewInstruction = () => {
 const addNewIngredient = () => {
   const newLi = ingredientToCopy.cloneNode(true);
   newLi.children[0].innerText = ingredientsInput.value;
+  console.log(newLi);
   newLi.classList.remove("hide");
   ingredientsList.append(newLi);
   ingredientsInput.value = "";
@@ -93,7 +92,7 @@ class Recipe {
   }
 }
 
-const saveToLocalStorage = (newObject) => {
+const saveToLocalStorageRecipe = (newObject) => {
   if (localStorage.getItem("recipes") != null) {
     allRecipies = JSON.parse(localStorage.getItem("recipes"));
     allRecipies.push(newObject);
@@ -114,18 +113,22 @@ recipeSaveButton.addEventListener("click", function () {
   );
   const instructions = document.querySelectorAll(".instructions__list li");
   const ingredients = document.querySelectorAll(".ingredients__list li");
-  const instructionsArray = Array.from(instructions).map((li) => li.innerText);
-  const ingredientsArray = Array.from(ingredients).map((li) => li.innerText);
+  const instructionsArray = Array.from(instructions).map(
+    (li) => li.firstElementChild.innerText
+  );
+  const ingredientsArray = Array.from(ingredients).map(
+    (li) => li.firstElementChild.innerText
+  );
 
   const newRecipe = new Recipe(
     allRecipies.length + 1,
     recipeName.value,
     recipeDescription.value
   );
-  newRecipe.instructions = [...instructionsArray];
-  newRecipe.ingredients = [...ingredientsArray];
+  newRecipe.instructions = [...instructionsArray].slice(1);
+  newRecipe.ingredients = [...ingredientsArray].slice(1);
 
-  saveToLocalStorage(newRecipe);
+  saveToLocalStorageRecipe(newRecipe);
 
   recipeName.value = "";
   recipeDescription.value = "";
@@ -139,6 +142,64 @@ recipeSaveButton.addEventListener("click", function () {
 
 const ScheduleBox = document.querySelector(".add_new_schedule");
 const addScheduleBtn = document.querySelector(".new_schedule_btn");
+const tableSelects = document.querySelectorAll(".table__schedules select");
+console.log(Array.from(tableSelects));
+
+const scheduleSaveButton = document.querySelector(
+  ".add_new_schedule .save_btn"
+);
+
+const dupa = localStorage.getItem("recipes");
+console.log(dupa);
+
+let allPlanns = [];
+
+class Schedule {
+  constructor(id, weekNumber, title, description) {
+    this.id = id; // id przepisu
+    this.title = title; // nazwa planu
+    this.description = description; // opis planu
+    this.weekNumber = weekNumber; // numer tygodnia do którego przypisany jest plan
+    this.monday = []; // plan na poniedzialek
+    this.tuesday = []; // plan na wtorek
+    this.wednesday = []; // plan na środę
+    this.thursday = []; // plan na czwartek
+    this.friday = []; // plan na piątek
+    this.saturday = []; // plan na sobotę
+    this.sunday = []; // plan na niedzielę
+  }
+}
+
+const saveToLocalStorageSchedule = (newObject) => {
+  if (localStorage.getItem("schedules") != null) {
+    allPlanns = JSON.parse(localStorage.getItem("schedules"));
+    allPlanns.push(newObject);
+    localStorage.setItem("schedules", JSON.stringify(allPlanns));
+  } else {
+    allPlanns.push(newObject);
+    localStorage.setItem("schedules", JSON.stringify(allPlanns));
+  }
+  alert("Plan zapisany do localStorage");
+};
+
+scheduleSaveButton.addEventListener("click", function () {
+  const scheduleName = document.querySelector(
+    'input[placeholder="Wpisz nazwę planu"]'
+  );
+  const scheduleDescription = document.querySelector(
+    'textarea[placeholder="Opisz swój plan"]'
+  );
+  const newSchedule = new Schedule(
+    allPlanns.length + 1,
+    scheduleName.value,
+    scheduleDescription.value
+  );
+
+  saveToLocalStorageSchedule(newSchedule);
+
+  scheduleName.value = "";
+  scheduleDescription.value = "";
+});
 
 addScheduleBtn.addEventListener("click", () => {
   ScheduleBox.classList.remove("hide");
