@@ -4,9 +4,6 @@ const mainWindow = document.querySelector(".first_entry_box");
 const secondWindow = document.querySelector(".not_first_entry_box");
 const navItems = document.querySelector(".nav-bar__list");
 
-console.log(navItems.children[0].children[0]["href"]);
-console.log(document.location.href);
-
 const hideWindow = () => {
   mainWindow.classList.add("hide");
 };
@@ -91,8 +88,6 @@ class Recipe {
     this.ingredients = []; // składniki przepisu
   }
 }
-
-console.log(JSON.parse(localStorage.getItem("recipes")));
 
 const saveToLocalStorageRecipe = (newObject) => {
   if (localStorage.getItem("recipes") != null) {
@@ -199,11 +194,13 @@ scheduleSaveButton.addEventListener("click", function () {
   const scheduleDescription = document.querySelector(".plan_description");
   const weekNumber = document.querySelector(".weekNumber");
 
-  JSON.parse(localStorage.getItem("schedules")).forEach((el) => {
-    if (el.id === weekNumber.value) {
-      error++;
-    }
-  });
+  if (localStorage.getItem("schedules") != null) {
+    JSON.parse(localStorage.getItem("schedules")).forEach((el) => {
+      if (el.id === weekNumber.value) {
+        error++;
+      }
+    });
+  }
 
   if (error === 1) {
     alert("Już istenieje plan na dany tydzień");
@@ -249,3 +246,57 @@ addScheduleBtn.addEventListener("click", () => {
   ScheduleBox.classList.remove("hide");
   secondWindow.classList.add("hide");
 });
+
+// ENTRY PAGE
+
+const currentDate = new Date();
+const startDate = new Date(currentDate.getFullYear(), 0, 1);
+const days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
+const weekNumber = Math.ceil(days / 7);
+
+const week = document.querySelector(".week_number");
+
+const week_meals = document.querySelector(".week_meals");
+
+if (localStorage.getItem("schedules") != null) {
+  const allSchedules = JSON.parse(localStorage.getItem("schedules")).sort(
+    (a, b) => a.id - b.id
+  );
+
+  const ids = allSchedules.map((el) => el.id);
+  const goal = weekNumber;
+  const closestID = ids.reduce(function (prev, curr) {
+    return Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev;
+  });
+
+  const actualSchedule = allSchedules.filter((el) => el.id === closestID)[0];
+  week.innerText = closestID;
+
+  for (let i = 0; i < week_meals.children.length; i++) {
+    week_meals.children[i].children[0].innerText = actualSchedule.monday[i];
+  }
+
+  for (let i = 0; i < week_meals.children.length; i++) {
+    week_meals.children[i].children[1].innerText = actualSchedule.tuesday[i];
+  }
+
+  for (let i = 0; i < week_meals.children.length; i++) {
+    week_meals.children[i].children[2].innerText = actualSchedule.wednesday[i];
+  }
+
+  for (let i = 0; i < week_meals.children.length; i++) {
+    week_meals.children[i].children[3].innerText = actualSchedule.thursday[i];
+  }
+
+  for (let i = 0; i < week_meals.children.length; i++) {
+    week_meals.children[i].children[4].innerText = actualSchedule.friday[i];
+  }
+
+  for (let i = 0; i < week_meals.children.length; i++) {
+    week_meals.children[i].children[5].innerText = actualSchedule.saturday[i];
+  }
+
+  for (let i = 0; i < week_meals.children.length; i++) {
+    week_meals.children[i].children[6].innerText = actualSchedule.sunday[i];
+  }
+}
