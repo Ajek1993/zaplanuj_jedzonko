@@ -224,11 +224,16 @@
           <div class="inputs__box schedule__box">
             <div class="input__box">
               <p>Nazwa planu</p>
-              <input type="text" placeholder="Wpisz nazwę planu" />
+              <input
+                class="plan_title"
+                type="text"
+                placeholder="Wpisz nazwę planu"
+              />
             </div>
             <div class="input__box">
               <p>Opis planu</p>
               <textarea
+                class="plan_description"
                 rows="5"
                 cols="87"
                 maxlength="200"
@@ -238,7 +243,7 @@
             </div>
             <div class="input__box">
               <p>Numer tygodnia</p>
-              <input type="number" />
+              <input class="weekNumber" type="number" />
             </div>
           </div>
           <table class="table__schedules">
@@ -259,7 +264,7 @@
                 <td><select></select></td>
                 <td><select></select></td>
               </tr>
-              <tr class="day-row thuesday">
+              <tr class="day-row tuesday">
                 <td>WTOREK</td>
                 <td><select></select></td>
                 <td><select></select></td>
