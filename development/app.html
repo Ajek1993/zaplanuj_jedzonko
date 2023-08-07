@@ -192,11 +192,8 @@
               <i class="fas fa-plus-square instruction_btn"></i>
               <ol type="1" class="instructions__list">
                 <li class="instructions__list-item hide">
-                  <span
-                    >obierz z zewnętrznych liści, nadetnij na krzyż od strony
-                    głąba.</span
-                  >
-                  <i class="fas fa-edit"></i><i class="fas fa-trash-alt"></i>
+                  <span></span><i class="fas fa-edit"></i
+                  ><i class="fas fa-trash-alt"></i>
                 </li>
               </ol>
             </div>
@@ -212,7 +209,7 @@
               <i class="fas fa-plus-square ingredients_btn"></i>
               <ul type="1" class="ingredients__list">
                 <li class="ingredients__list-item hide">
-                  <span>Brukselka 300g</span><i class="fas fa-edit"></i
+                  <span></span><i class="fas fa-edit"></i
                   ><i class="fas fa-trash-alt"></i>
                 </li>
               </ul>
@@ -227,11 +224,16 @@
           <div class="inputs__box schedule__box">
             <div class="input__box">
               <p>Nazwa planu</p>
-              <input type="text" placeholder="Wpisz nazwę planu" />
+              <input
+                class="plan_title"
+                type="text"
+                placeholder="Wpisz nazwę planu"
+              />
             </div>
             <div class="input__box">
               <p>Opis planu</p>
               <textarea
+                class="plan_description"
                 rows="5"
                 cols="87"
                 maxlength="200"
@@ -241,7 +243,7 @@
             </div>
             <div class="input__box">
               <p>Numer tygodnia</p>
-              <input type="number" />
+              <input class="weekNumber" type="number" />
             </div>
           </div>
           <table class="table__schedules">
@@ -262,7 +264,7 @@
                 <td><select></select></td>
                 <td><select></select></td>
               </tr>
-              <tr class="day-row thuesday">
+              <tr class="day-row tuesday">
                 <td>WTOREK</td>
                 <td><select></select></td>
                 <td><select></select></td>
