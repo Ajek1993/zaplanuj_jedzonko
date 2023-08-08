@@ -148,15 +148,19 @@ const scheduleSaveButton = document.querySelector(
 
 const recipesFromLocaleStage = JSON.parse(localStorage.getItem("recipes"));
 const recipesNumbers = document.querySelector(".recipes_numbers");
-recipesNumbers.innerText = recipesFromLocaleStage.length;
 
-tableSelects.forEach((select) => {
-  recipesFromLocaleStage.forEach((el) => {
-    const newOption = document.createElement("option");
-    newOption.innerText = el.title;
-    select.appendChild(newOption);
+if (localStorage.getItem("recipes") != null) {
+  recipesNumbers.innerText = recipesFromLocaleStage.length;
+  tableSelects.forEach((select) => {
+    recipesFromLocaleStage.forEach((el) => {
+      const newOption = document.createElement("option");
+      newOption.innerText = el.title;
+      select.appendChild(newOption);
+    });
   });
-});
+} else {
+  recipesNumbers.innerText = 0;
+}
 
 let allPlanns = [];
 
