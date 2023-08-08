@@ -95,10 +95,10 @@
       cursor: pointer;
     }
     .table-scroll {
-      display: inline-block;
-      height: 450px;
-      width: 100%;
-      overflow-y: scroll;
+      // display: inline-block;
+      // height: 450px;
+      // width: 100%;
+      overflow-y: auto;
 
       tr:hover {
         background-color: #ddd;
