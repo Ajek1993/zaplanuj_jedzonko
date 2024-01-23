@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Front-End ScrumLab",
   "scripts": {
-    "start": "parcel development/*.html",
+    "start": "parcel development/*.html"
   },
   "repository": {
     "type": "git",
